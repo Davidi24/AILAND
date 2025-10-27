@@ -2,6 +2,7 @@
 
 import Grid from './Grid'
 import Blurs from './Blurs'
+import ThreeGraphBG from '../Home/ThreeGraphBG'
 
 export default function SiteBackground() {
   return (
