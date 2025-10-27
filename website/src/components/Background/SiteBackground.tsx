@@ -1,4 +1,3 @@
-// components/Background/SiteBackground.tsx
 'use client'
 
 import Grid from './Grid'
