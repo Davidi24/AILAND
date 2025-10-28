@@ -7,7 +7,7 @@ type Props = {
   title: string
   text: string
   align: 'left' | 'right'
-  dark?: boolean 
+  dark?: boolean
 }
 
 export default function Card({ icon, title, text, align }: Props) {
@@ -49,7 +49,6 @@ export default function Card({ icon, title, text, align }: Props) {
         className={`relative w-full max-w-md rounded-2xl border backdrop-blur-2xl
         transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
         will-change-transform hover:-translate-y-1
-        /* glass surface & shadow via theme */
         bg-white/40 border-white/60 shadow-[0_22px_80px_rgba(2,6,23,0.14)]
         dark:bg-white/10 dark:border-white/10 dark:shadow-[0_14px_60px_rgba(0,0,0,0.42)]`}
         style={{
@@ -81,30 +80,20 @@ export default function Card({ icon, title, text, align }: Props) {
         />
 
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-0 transition-opacity duration-500"
           style={{
             background:
-              'radial-gradient(200px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 60%)',
-            transform: 'translateZ(2px)',
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 dark:opacity-100 dark:group-hover:opacity-100"
-          style={{
-            background:
-              'radial-gradient(180px 180px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.10), transparent 60%)',
+              'radial-gradient(200px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.22), transparent 70%)',
             transform: 'translateZ(2px)',
           }}
         />
 
         <div
-          className="pointer-events-none absolute -inset-8 rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-screen"
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-85 transition-opacity duration-500 dark:opacity-80 dark:group-hover:opacity-100"
           style={{
             background:
-              'linear-gradient(120deg, transparent 30%, rgba(255,255,255,.20) 45%, rgba(255,255,255,.06) 55%, transparent 70%)',
-            transform: 'translateZ(3px)',
-            animation: 'sweep 1.2s ease forwards',
-            animationDelay: '120ms',
+              'radial-gradient(230px 230px at var(--mx,50%) calc(var(--my,50%) + 40px), rgba(110,110,110,0.25), transparent 85%)',
+            transform: 'translateZ(2px)',
           }}
         />
 
@@ -123,11 +112,8 @@ export default function Card({ icon, title, text, align }: Props) {
               className={[
                 'relative grid h-10 w-10 place-items-center rounded-full ring-1 transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]',
                 'group-hover:scale-105',
-                // light
                 'bg-sky-200/60 ring-sky-300',
-                'group-hover:bg-linear-to-r group-hover:from-emerald-300 group-hover:to-violet-300',
                 'group-hover:ring-transparent group-hover:shadow-[0_0_24px_rgba(139,92,246,0.24),0_0_18px_rgba(16,185,129,0.22)]',
-                // dark
                 'dark:bg-cyan-300/10 dark:ring-cyan-100/20',
               ].join(' ')}
               style={{ transform: 'translateZ(25px)' }}
@@ -148,11 +134,6 @@ export default function Card({ icon, title, text, align }: Props) {
       <style jsx>{`
         .perspective-1000 { perspective: 1000px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes sweep {
-          0%   { transform: translateZ(3px) translateX(-120%) rotate(12deg); opacity: 0; }
-          25%  { opacity: 1; }
-          100% { transform: translateZ(3px) translateX(120%) rotate(12deg); opacity: 0; }
-        }
       `}</style>
     </div>
   )

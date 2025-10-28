@@ -26,8 +26,15 @@ export default function Services() {
 
     const ioLine = new IntersectionObserver(entries => {
       entries.forEach(e => e.isIntersecting && setLineVisible(true))
-    }, { threshold: 0.2 })
-    if (lineRef.current) ioLine.observe(lineRef.current)
+    }, { threshold: 0 })
+    if (lineRef.current) {
+      ioLine.observe(lineRef.current)
+      requestAnimationFrame(() => {
+        const r = lineRef.current!.getBoundingClientRect()
+        const inView = r.top <= window.innerHeight
+        if (inView) setLineVisible(true)
+      })
+    }
 
     return () => {
       ioCards.disconnect()
@@ -52,7 +59,7 @@ export default function Services() {
 
         <div
           ref={lineRef}
-          className={`pointer-events-none absolute inset-0 hidden sm:flex justify-center mt-24 transition-all duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${
+          className={`pointer-events-none absolute inset-0 hidden sm:flex justify-center mt-24 transition-all duration-1800 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${
             lineVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
           }`}
         >
