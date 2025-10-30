@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
-import Card from './Caard'
+import Card from './Card'
 import items from './data'
 
 export default function Services() {
@@ -91,7 +91,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="space-y-10 relative">
+        <div className="space-y-10 lg:space-x-0 relative">
           {items.map((it, idx) => (
             <div
               key={it.title}
