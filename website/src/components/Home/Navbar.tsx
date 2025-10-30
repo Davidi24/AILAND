@@ -62,9 +62,9 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="mt-4 flex h-14 items-center justify-between rounded-3xl border px-4 sm:px-6 backdrop-blur-xl border-black/5 bg-white/10 supports-[backdrop-filter]:bg-white/30 shadow-sm dark:border-white/10 dark:bg-white/5">
-          <div className="flex items-center gap-0 leading-none -ml-2 sm:-ml-4">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <nav className="mt-4 flex h-14 items-center justify-between rounded-3xl border px-4 lg:px-6 backdrop-blur-xl border-black/5 bg-white/10 supports-[backdrop-filter]:bg-white/30 shadow-sm dark:border-white/10 dark:bg-white/5">
+          <div className="flex items-center gap-0 leading-none -ml-2 lg:-ml-4">
             <Link href="/" className="inline-flex items-center">
               <img
                 src="/assets/icons/ailand-a-logo.svg"
@@ -72,20 +72,19 @@ export default function Navbar() {
                 className="h-20 w-20 shrink-0"
               />
             </Link>
-            <span className="hidden sm:block text-sm font-medium tracking-wide text-gray-800 dark:text-white" />
           </div>
 
           <button
             onClick={() => setOpen(v => !v)}
             aria-label="Menu"
-            className="flex h-10 w-10 items-center justify-center rounded-xl sm:hidden text-gray-900 hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
+            className="flex h-10 w-10 items-center justify-center rounded-xl lg:hidden text-gray-900 hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
 
-          <ul className="hidden sm:flex items-center gap-6 md:gap-8">
+          <ul className="hidden lg:flex items-center gap-6 md:gap-8">
             {links.map(l => {
               const isActive = active === l.href
               return (
@@ -105,7 +104,7 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Link
               href="#signup"
               className="rounded-xl px-4 py-2 text-sm font-medium shadow-[0_8px_30px_-10px_rgba(99,102,241,0.45)] transition text-white dark:text-black bg-gradient-to-r from-emerald-300 to-violet-300 hover:shadow-[0_16px_40px_-12px_rgba(16,185,129,0.55)]"
@@ -130,7 +129,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`sm:hidden fixed top-20 right-4 w-[50%] max-w-xs rounded-2xl border px-5 py-4 backdrop-blur backdrop-saturate-150 transition-all duration-300 ${open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'} border-black/5 bg-white/5 supports-[backdrop-filter]:bg-white/55 shadow-sm dark:border-white/10 dark:bg-black/20`}
+        className={`lg:hidden fixed top-20 right-4 w-[50%] max-w-xs rounded-2xl border px-5 py-4 backdrop-blur backdrop-saturate-150 transition-all duration-300 ${open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'} border-black/5 bg-white/5 supports-[backdrop-filter]:bg-white/55 shadow-sm dark:border-white/10 dark:bg-black/20`}
       >
         <ul className="flex flex-col text-left divide-y w-full divide-black/10 dark:divide-white/10">
           {links.map(l => {
