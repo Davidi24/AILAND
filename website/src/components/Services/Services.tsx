@@ -91,7 +91,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="space-y-10 lg:space-x-0 relative">
+        <div className="space-y-10 lg:space-y-0 relative">
           {items.map((it, idx) => (
             <div
               key={it.title}
@@ -102,7 +102,7 @@ export default function Services() {
                 idx % 2
                   ? 'flex justify-end sm:translate-x-0 translate-x-3'
                   : 'flex justify-start sm:translate-x-0 -translate-x-3'
-              }`}
+              } ${idx !== 0 ? 'lg:-mt-[15px]' : ''}`}
             >
               <Card
                 icon={it.icon}
