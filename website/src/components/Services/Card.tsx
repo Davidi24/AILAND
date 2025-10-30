@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 
 type Props = {
-  icon: string
+  icon: React.ReactNode
   title: string
   text: string
   align: 'left' | 'right'
@@ -46,11 +46,12 @@ export default function Card({ icon, title, text, align }: Props) {
     >
       <div
         ref={ref}
-        className={`relative w-full max-w-md rounded-2xl border backdrop-blur-2xl
-        transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
+        className={`relative w-full max-w-md rounded-2xl border backdrop-blur transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
         will-change-transform hover:-translate-y-1
-        bg-white/40 border-white/60 shadow-[0_22px_80px_rgba(2,6,23,0.14)]
-        dark:bg-white/10 dark:border-white/10 dark:shadow-[0_14px_60px_rgba(0,0,0,0.42)]`}
+        border-black/5 bg-white/10 supports-backdrop-filter:bg-white/30 shadow-sm 
+        hover:bg-white/60 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]
+        dark:border-white/10 dark:bg-white/5 
+        dark:hover:bg-white/10 dark:hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]`}
         style={{
           transform: 'rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0)',
           transformStyle: 'preserve-3d',
@@ -109,20 +110,21 @@ export default function Card({ icon, title, text, align }: Props) {
         <div className="relative p-6" style={{ transform: 'translateZ(20px)' }}>
           <div className="mb-3 flex items-center gap-3">
             <div
-              className={[
-                'relative grid h-10 w-10 place-items-center rounded-full ring-1 transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]',
-                'group-hover:scale-105',
-                'bg-sky-200/60 ring-sky-300',
-                'group-hover:ring-transparent group-hover:shadow-[0_0_24px_rgba(139,92,246,0.24),0_0_18px_rgba(16,185,129,0.22)]',
-                'dark:bg-cyan-300/10 dark:ring-cyan-100/20',
-              ].join(' ')}
+              className="relative grid h-10 w-10 place-items-center rounded-full transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]"
               style={{ transform: 'translateZ(25px)' }}
             >
-              <span className="text-slate-900 dark:text-white text-lg">{icon}</span>
+              <div className="absolute inset-0 rounded-full p-[3px] bg-linear-to-r from-[#3ef4c5] to-[#a78bfa] opacity-90 shadow-[0_0_25px_rgba(62,244,197,0.45),0_0_35px_rgba(167,139,250,0.35)]">
+                <div className="h-full w-full rounded-full bg-white dark:bg-slate-900"></div>
+              </div>
+              <span className="relative text-slate-900 dark:text-white text-lg z-10 flex items-center justify-center">{icon}</span>
               <span className="pointer-events-none absolute inset-0 rounded-full blur-xl transition-opacity duration-700 dark:bg-cyan-200/25" />
             </div>
 
-            <h3 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">{title}</h3>
+
+            <h3 className="text-xl font-semibold tracking-tight text-gray-800 dark:text-white">
+              {title}
+            </h3>
+
           </div>
 
           <div className="relative overflow-hidden transition-[max-height,filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] max-h-12 group-hover:max-h-40 group-hover:drop-shadow-sm">
