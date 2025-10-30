@@ -3,6 +3,8 @@ import Navbar from "@/components/Home/Navbar";
 import Services from "@/components/Services/Services";
 import SubPage from '@/components/Pricing/SubPage'
 import TeamSection from '@/components/OurTeam/TeamSection'
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/End/Footer";
 
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
           <Services />
           <SubPage/>
           <TeamSection/>
+          <Contact/>
+          <Footer/>
         </div>
       </main>
     </div>
