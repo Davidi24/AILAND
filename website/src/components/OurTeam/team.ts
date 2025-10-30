@@ -6,7 +6,7 @@ export const team: TeamMember[] = [
     name: "Klea Haxhiu",
     role: "Product Designer",
     funFact: "Loves turning knowledge graphs into beautiful, intuitive UIs.",
-    photo: "/team/klea.jpeg",
+    photo: "/team/kl.jpg",
     verified: true,
     social: {
       github: "https://github.com/hklea",
@@ -16,12 +16,12 @@ export const team: TeamMember[] = [
   {
     id: "david",
     name: "David Keçi",
-    role: "Frontend Engineer",
+    role: "Full Stack Developer",
     funFact: "Typescript fanatic and Tailwind whisperer.",
-    photo: "/team/klea.jpeg",
+    photo: "/team/david.jpg",
     social: {
-      github: "https://github.com/…",
-      linkedin: "https://www.linkedin.com/in/…",
+      github: "https://github.com/Davidi24 ",
+      linkedin: " https://www.linkedin.com/in/david-keci-917712274/",
     },
   },
   {
@@ -29,21 +29,21 @@ export const team: TeamMember[] = [
     name: "Erisa Zaimi",
     role: "Frontend Engineer",
     funFact: "Typescript fanatic and Tailwind whisperer.",
-    photo: "/team/klea.jpeg",
+    photo: "/team/eraa.png",
     social: {
-      github: "https://github.com/…",
-      linkedin: "https://www.linkedin.com/in/…",
+      github: "https://github.com/ezaimi",
+      linkedin: " https://www.linkedin.com/in/erisazaimi/ ",
     },
   },
   {
     id: "tamanna",
     name: "Tammanna Rahman",
-    role: "Frontend Engineer",
-    funFact: "Typescript fanatic and Tailwind whisperer.",
-    photo: "/team/klea.jpeg",
+    role: "Full Stack Software Engineer",
+    funFact: "Builds worlds where data comes to life in AR.",
+    photo: "/team/Tamannaa.png",
     social: {
-      github: "https://github.com/…",
-      linkedin: "https://www.linkedin.com/in/…",
+      github: " https://github.com/TechDeitySpark ",
+      linkedin: "https://www.linkedin.com/in/tamanna-rahman-diu/",
     },
   },
   {
@@ -51,10 +51,10 @@ export const team: TeamMember[] = [
     name: "Qasim Abdullah",
     role: "Frontend Engineer",
     funFact: "Typescript fanatic and Tailwind whisperer.",
-    photo: "/team/klea.jpeg",
+    photo: "/team/qasim.png",
     social: {
-      github: "https://github.com/…",
-      linkedin: "https://www.linkedin.com/in/…",
+      github: "hhttps://github.com/Qasim-Abdullah",
+      linkedin: "http://www.linkedin.com/in/qasim-abdullah",
     },
   },
 ];
