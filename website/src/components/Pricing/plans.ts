@@ -1,5 +1,6 @@
 import type { Plan } from "./PlanCard";
 
+
 export const plans: Plan[] = [
   {
     name: "Free",
@@ -19,7 +20,7 @@ export const plans: Plan[] = [
     name: "Pro",
     price: "€99",
     cadence: "/month",
-    cta: { label: "Start Pro Trial", href: "/checkout" },
+    cta: { label: "Start Pro Trial", href: "/#contact" },
     features: [
       "Larger knowledge graphs",
       "Semantic filters & search",
@@ -35,7 +36,7 @@ export const plans: Plan[] = [
     name: "Enterprise",
     price: "Custom",
     cadence: "",
-    cta: { label: "Contact Sales", href: "/contact" },
+    cta: { label: "Contact Sales", href: "/#contact" },
     features: [
       "Multi-user collaboration",
       "Storytelling mode",
