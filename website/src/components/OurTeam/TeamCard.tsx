@@ -25,7 +25,7 @@ export function TeamCard({
 }: TeamMember) {
   return (
     <article className="group relative overflow-hidden rounded-3xl bg-white/5 shadow-xl ring-1 ring-black/5 dark:ring-white/10">
-      {/* Photo */}
+      
       <div className="relative aspect-[3/4] w-full overflow-hidden">
         <img
           src={photo}
@@ -34,30 +34,10 @@ export function TeamCard({
         />
 
      
-        <div
-        className="
-            pointer-events-none absolute inset-x-0 bottom-0 h-[50%]
-            backdrop-blur-[12px] backdrop-saturate-150
-            [background:linear-gradient(to_top,
-            rgba(255,255,255,0.45)_0%,
-            rgba(255,255,255,0.22)_28%,
-            rgba(255,255,255,0.10)_45%,
-            rgba(255,255,255,0)_55%)]
-            dark:[background:linear-gradient(to_top,
-            rgba(0,0,0,0.28)_0%,
-            rgba(0,0,0,0.16)_28%,
-            rgba(0,0,0,0.08)_45%,
-            rgba(0,0,0,0)_55%)]
-            [mask-image:linear-gradient(to_top,black_0%,black_40%,transparent_90%)]
-            [mask-repeat:no-repeat] [mask-size:100%_100%]
-        "
-        />
-
-        
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[35%] bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
       </div>
 
-      {/* Text block */}
+
       <div className="absolute inset-x-0 bottom-0 p-5">
         <div className="flex items-center gap-2">
           <h3 className="text-white text-xl font-semibold drop-shadow">

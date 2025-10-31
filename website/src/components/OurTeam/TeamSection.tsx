@@ -3,8 +3,10 @@ import { team } from "./team";
 
 export default function TeamSection() {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24">
-      {/* Heading */}
+    <section 
+    id="team"
+    className="relative mx-auto max-w-7xl px-6 py-24">
+     
       <div className="text-center">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 via-violet-400 to-emerald-400 dark:from-emerald-300 dark:via-violet-300 dark:to-emerald-300 bg-clip-text text-transparent">
           Our Team
@@ -19,14 +21,18 @@ export default function TeamSection() {
         {team.map((member) => (
           <div
             key={member.id}
-            className="group relative rounded-3xl bg-white/5 p-6 shadow-lg ring-1 ring-black/10 dark:ring-white/10
-                       backdrop-blur-md transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl hover:ring-emerald-400/40"
-          >
+           className="group relative rounded-3xl bg-white/5 p-6 shadow-lg ring-1 ring-black/10 dark:ring-white/10
+            backdrop-blur-md transition-transform duration-500 hover:-translate-y-2
+            hover:shadow-[0_0_25px_-4px_rgba(16,185,129,0.5)] dark:hover:shadow-[0_0_25px_-4px_rgba(167,139,250,0.5)]"
+
+           >
             {/* hover glow */}
-            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-tr from-emerald-400/10 via-violet-400/10 to-transparent blur-xl" />
+          <div className="absolute inset-0 rounded-3xl ring-1  opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-emerald-400/10 via-violet-400/10 to-transparent blur-xl " />
+
+           <div className="absolute inset-0 rounded-3xl ring-1 ring-emerald-400/40 dark:ring-violet-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="relative h-32 w-32 overflow-hidden rounded-full ring-2 ring-emerald-300/60 shadow-md">
+              <div className="relative h-32 w-32 overflow-hidden rounded-full ring-1 shadow-md">
                 <Image
                   src={member.photo}
                   alt={member.name}
@@ -49,7 +55,7 @@ export default function TeamSection() {
                 </p>
               )}
 
-              {/* Socials */}
+           
               {(member?.social?.github || member?.social?.linkedin) && (
                 <div className="mt-4 flex items-center space-x-3">
                   {member?.social?.github && (
@@ -58,10 +64,11 @@ export default function TeamSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} on GitHub`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 hover:ring-emerald-400/50 transition"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 
+                    hover:ring-emerald-400/50 dark:hover:ring-violet-400/50 transition"
                       title="GitHub"
                     >
-                      {/* GitHub icon */}
+                      
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         className="h-5 w-5 text-gray-800 dark:text-white">
                         <path fillRule="evenodd" d="M12 .5C5.73.5.98 5.24.98 11.5c0 4.85 3.15 8.96 7.52 10.41.55.1.75-.24.75-.53 0-.26-.01-1.12-.02-2.04-3.06.67-3.7-1.31-3.7-1.31-.5-1.27-1.2-1.61-1.2-1.61-.98-.67.07-.66.07-.66 1.08.08 1.64 1.11 1.64 1.11.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.7-1.45-2.44-.28-5.01-1.22-5.01-5.43 0-1.2.43-2.18 1.12-2.95-.11-.28-.49-1.42.1-2.96 0 0 .93-.3 3.05 1.13a10.6 10.6 0 0 1 2.78-.37c.94 0 1.89.13 2.78.37 2.12-1.43 3.05-1.13 3.05-1.13.59 1.54.21 2.68.1 2.96.69.77 1.11 1.75 1.11 2.95 0 4.22-2.58 5.14-5.04 5.41.39.33.74.98.74 1.98 0 1.43-.01 2.58-.01 2.93 0 .29.2.64.76.53A10.53 10.53 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" clipRule="evenodd"/>
@@ -75,10 +82,11 @@ export default function TeamSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} on LinkedIn`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 hover:ring-emerald-400/50 transition"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 
+                    hover:ring-emerald-400/50 dark:hover:ring-violet-400/50 transition"
                       title="LinkedIn"
                     >
-                      {/* LinkedIn icon */}
+                     
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         fill="currentColor" className="h-5 w-5 text-gray-800 dark:text-white">
                         <path d="M4.98 3.5C4.98 4.61 4.08 5.5 2.97 5.5S.97 4.61.97 3.5C.97 2.39 1.87 1.5 2.98 1.5s2 .89 2 2zM1 8h4v14H1zM8 8h4v2.09h.06c.56-1.06 1.92-2.18 3.95-2.18 4.23 0 5.01 2.79 5.01 6.42V22H17v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.42V22H8V8z"/>
