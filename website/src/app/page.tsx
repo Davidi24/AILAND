@@ -8,6 +8,7 @@ import Footer from "@/components/End/Footer";
 import ThreeGraphBG from "@/components/Home/ThreeGraphBG";
 
 
+
 export default function Home() {
   return (
     <div className="">
@@ -17,7 +18,7 @@ export default function Home() {
           <HomeHero />
           <div className="relative">
             <div className="absolute inset-0 -z-10">
-              <ThreeGraphBG nodeCount={32} />
+              {/* <ThreeGraphBG nodeCount={32} /> */}
             </div>
             <div >
               <Services />
@@ -26,13 +27,13 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 -z-10">
-              <ThreeGraphBG nodeCount={10} />
+              {/* <ThreeGraphBG nodeCount={10} /> */}
             </div>
             <TeamSection />
           </div>
           <div className="relative">
             <div className="absolute inset-0 -z-10">
-              <ThreeGraphBG nodeCount={25} />
+              {/* <ThreeGraphBG nodeCount={25} /> */}
             </div>
             <Contact />
             <Footer />
