@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes'
 import Card from './Card'
 import items from './data'
 import { motion } from 'framer-motion'
+import SectionTitle from '@/Layouts/SectionTitle'
 
 
 export default function Services() {
@@ -48,29 +49,11 @@ export default function Services() {
     <section className="relative min-h-[110vh] overflow-hidden transition-colors duration-500 text-black dark:text-white">
       <div className="relative mx-auto max-w-6xl px-6 py-8">
 
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-white sm:text-5xl flex justify-center space-x-3"
-          >
-            <div>Our</div>
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-violet-300 to-emerald-300">
-              Services
-            </span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg leading-8 text-gray-600 dark:text-white/70"
-          >
-        Explore what we offer and see how our solutions can help you achieve your goals. 
-          </motion.p>
-        </div>
+        <SectionTitle
+          title="Our Services"
+          subtitle="Explore what we offer and see how our solutions can help you achieve your goals."
+        />
+
 
 
 
