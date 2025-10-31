@@ -43,17 +43,17 @@ export function PlanCard({
       )}
 
       <div className="mb-3">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-300">{name}</h3>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-300">{name}</h3>
       </div>
 
       <div className="mb-5 flex items-baseline gap-2">
-        <span className="text-4xl font-extrabold leading-none text-gray-900 dark:text-white">
+        <span className="text-4xl font-extrabold leading-none text-gray-800 dark:text-white">
           {price}
         </span>
         {cadence && <span className="text-xs text-gray-600 dark:text-white/60">{cadence}</span>}
       </div>
 
-      <ul className="mb-6 flex flex-1 flex-col gap-2 text-sm text-gray-700 dark:text-white/80">
+      <ul className="mb-6 flex flex-1 flex-col gap-2 text-sm text-gray-800 dark:text-white/80">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2.5">
             <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-emerald-500 dark:text-emerald-400" />
@@ -68,7 +68,7 @@ export function PlanCard({
           "inline-flex w-full items-center justify-center rounded-2xl px-6 py-3 text-base font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-black " +
           (highlighted
             ? "text-white dark:text-black bg-gradient-to-r from-emerald-300 to-violet-300 shadow-[0_10px_30px_-10px_rgba(139,92,246,0.6)] hover:shadow-[0_18px_40px_-12px_rgba(16,185,129,0.7)] focus:ring-violet-400"
-            : "bg-gray-900 text-white hover:bg-gray-800 dark:border dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/15 focus:ring-gray-300 dark:focus:ring-white/30")
+            : "bg-[#1e2939] text-white hover:bg-gray-800 dark:border dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/15 focus:ring-gray-300 dark:focus:ring-white/30")
         }
       >
         {cta.label}
