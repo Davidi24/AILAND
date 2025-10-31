@@ -24,9 +24,19 @@ export default function Home() {
             </div>
             <SubPage />
           </div>
-          <TeamSection />
-          <Contact />
-          <Footer />
+          <div className="relative">
+            <div className="absolute inset-0 -z-10">
+              <ThreeGraphBG nodeCount={10} />
+            </div>
+            <TeamSection />
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 -z-10">
+              <ThreeGraphBG nodeCount={25} />
+            </div>
+            <Contact />
+            <Footer />
+          </div>
         </div>
       </main>
     </div>
