@@ -11,6 +11,8 @@ export default function CardLayout({ children }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const onMove = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement
+    if (target.closest('a, button, svg')) return
     const el = ref.current
     if (!el) return
     const r = el.getBoundingClientRect()
@@ -46,13 +48,10 @@ export default function CardLayout({ children }: Props) {
         hover:bg-white/60 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]
         dark:border-white/10 dark:bg-white/5 
         dark:hover:bg-white/10 dark:hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]`}
-        style={{
-          transform: 'rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0)',
-          transformStyle: 'preserve-3d',
-        }}
+      
       >
         <div
-          className="pointer-events-auto absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
           style={{
             background:
               'conic-gradient(from 0deg at 50% 50%, rgba(16,185,129,.55), rgba(139,92,246,.55), rgba(16,185,129,.55))',
@@ -68,14 +67,14 @@ export default function CardLayout({ children }: Props) {
         />
 
         <div
-          className={`absolute inset-0 rounded-2xl transition-opacity duration-700
+          className={`absolute inset-0 rounded-2xl transition-opacity duration-700 pointer-events-none
           bg-linear-to-br from-white/70 via-white/25 to-white/10
           dark:from-white/10 dark:via-transparent dark:to-white/5`}
           style={{ transform: 'translateZ(1px)' }}
         />
 
         <div
-          className="pointer-events-auto absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-0 transition-opacity duration-500"
+          className="absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none"
           style={{
             background:
               'radial-gradient(200px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.22), transparent 70%)',
@@ -84,7 +83,7 @@ export default function CardLayout({ children }: Props) {
         />
 
         <div
-          className="pointer-events-auto absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-85 transition-opacity duration-500 dark:opacity-80 dark:group-hover:opacity-100"
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-85 transition-opacity duration-500 dark:opacity-80 dark:group-hover:opacity-100 pointer-events-none"
           style={{
             background:
               'radial-gradient(230px 230px at var(--mx,50%) calc(var(--my,50%) + 40px), rgba(110,110,110,0.25), transparent 85%)',
@@ -95,12 +94,17 @@ export default function CardLayout({ children }: Props) {
         <div className="relative p-6 pointer-events-auto" style={{ transform: 'translateZ(20px)' }}>
           {children}
         </div>
-
       </div>
 
       <style jsx>{`
-        .perspective-1000 { perspective: 1000px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
       `}</style>
     </div>
   )
