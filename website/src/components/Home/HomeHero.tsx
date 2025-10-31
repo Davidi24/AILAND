@@ -15,18 +15,14 @@ export default function HomeHero() {
 
       <motion.div
         className="mx-auto max-w-7xl px-6 py-28 sm:py-36 lg:px-8"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { staggerChildren: 0.3, delayChildren: 0.4},
-
-          },
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.6,
+          ease: [0.22, 1, 0.36, 1],
         }}
       >
+
         <div className="mx-auto max-w-3xl text-center">
           <motion.h1
             className="mt-6 text-4xl font-semibold tracking-tight text-gray-800 dark:text-white sm:text-6xl"
