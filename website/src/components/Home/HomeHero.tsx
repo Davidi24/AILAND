@@ -10,7 +10,7 @@ export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden ">
       <div className="absolute inset-0 -z-10">
-        {/* <ThreeGraphBG /> */}
+        <ThreeGraphBG />
       </div>
 
       <motion.div
