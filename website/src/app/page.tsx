@@ -36,7 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative -mt-18 md:mt-0">
+          <div className="relative -mt-18 md:mt-0" id="team">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 100 : 10} />
             </div>
@@ -47,7 +47,9 @@ export default function Home() {
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 125 : 25} />
             </div>
-            <Contact />
+            <div id='contact'>
+              <Contact />
+            </div>
             <div className='-mt-22 md:mt-0'>
               <Footer />
             </div>
