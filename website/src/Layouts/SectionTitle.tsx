@@ -34,7 +34,7 @@ export default function SectionTitle({ title, subtitle }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-6 text-lg leading-8 text-gray-600 dark:text-white/70"
+        className="mt-1 text-lg leading-8 text-gray-600 dark:text-white/70"
       >
         {subtitle}
       </motion.p>

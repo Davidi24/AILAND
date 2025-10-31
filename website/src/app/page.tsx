@@ -26,27 +26,31 @@ export default function Home() {
           <Navbar />
           <HomeHero />
 
-          <div className="relative">
+          <div className="relative -mt-10 md:mt-0" id='services'>
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 102 : 32} />
             </div>
             <Services />
-            <SubPage />
+            <div id='subscription'>
+              <SubPage />
+            </div>
           </div>
 
-          <div className="relative">
+          <div className="relative -mt-18 md:mt-0">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 100 : 10} />
             </div>
             <TeamSection />
           </div>
 
-          <div className="relative">
+          <div className="relative -mt-16 md:mt-0">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 125 : 25} />
             </div>
             <Contact />
-            <Footer />
+            <div className='-mt-22 md:mt-0'>
+              <Footer />
+            </div>
           </div>
         </div>
       </main>
