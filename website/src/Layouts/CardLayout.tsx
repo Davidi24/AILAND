@@ -52,7 +52,7 @@ export default function CardLayout({ children }: Props) {
         }}
       >
         <div
-          className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          className="pointer-events-auto absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
           style={{
             background:
               'conic-gradient(from 0deg at 50% 50%, rgba(16,185,129,.55), rgba(139,92,246,.55), rgba(16,185,129,.55))',
@@ -75,7 +75,7 @@ export default function CardLayout({ children }: Props) {
         />
 
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-0 transition-opacity duration-500"
+          className="pointer-events-auto absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-0 transition-opacity duration-500"
           style={{
             background:
               'radial-gradient(200px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.22), transparent 70%)',
@@ -84,7 +84,7 @@ export default function CardLayout({ children }: Props) {
         />
 
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-85 transition-opacity duration-500 dark:opacity-80 dark:group-hover:opacity-100"
+          className="pointer-events-auto absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-85 transition-opacity duration-500 dark:opacity-80 dark:group-hover:opacity-100"
           style={{
             background:
               'radial-gradient(230px 230px at var(--mx,50%) calc(var(--my,50%) + 40px), rgba(110,110,110,0.25), transparent 85%)',
@@ -92,9 +92,10 @@ export default function CardLayout({ children }: Props) {
           }}
         />
 
-        <div className="relative p-6" style={{ transform: 'translateZ(20px)' }}>
+        <div className="relative p-6 pointer-events-auto" style={{ transform: 'translateZ(20px)' }}>
           {children}
         </div>
+
       </div>
 
       <style jsx>{`

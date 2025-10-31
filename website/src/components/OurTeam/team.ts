@@ -17,7 +17,7 @@ export const team: TeamMember[] = [
     id: "david",
     name: "David Keçi",
     role: "Full Stack Developer",
-    funFact: "Typescript fanatic and Tailwind whisperer.",
+    funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
     photo: "/team/david.jpg",
     social: {
       github: "https://github.com/Davidi24 ",
@@ -28,7 +28,7 @@ export const team: TeamMember[] = [
     id: "era",
     name: "Erisa Zaimi",
     role: "Frontend Engineer",
-    funFact: "Typescript fanatic and Tailwind whisperer.",
+    funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
     photo: "/team/eraa.png",
     social: {
       github: "https://github.com/ezaimi",
@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     id: "qasim",
     name: "Qasim Abdullah",
     role: "Frontend Engineer",
-    funFact: "Typescript fanatic and Tailwind whisperer.",
+    funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
     photo: "/team/qasim.png",
     social: {
       github: "hhttps://github.com/Qasim-Abdullah",
