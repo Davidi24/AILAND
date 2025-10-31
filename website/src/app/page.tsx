@@ -5,7 +5,8 @@ import SubPage from '@/components/Pricing/SubPage'
 import TeamSection from '@/components/OurTeam/TeamSection'
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/End/Footer";
-import ThreeGraphBG from "@/components/Home/ThreeGraphBG";
+import ThreeGraphBG from "./dynamicImport";
+
 
 
 
