@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
 import Card from './Card'
 import items from './data'
+import { motion } from 'framer-motion'
+
 
 export default function Services() {
   const { resolvedTheme } = useTheme()
@@ -44,32 +46,45 @@ export default function Services() {
 
   return (
     <section className="relative min-h-[110vh] overflow-hidden transition-colors duration-500 text-black dark:text-white">
-      <div className="relative mx-auto max-w-6xl px-6 py-14">
-        <div className="text-center mb-14">
-          <h2
-            className={`text-4xl font-bold tracking-tight bg-linear-to-r bg-clip-text text-transparent ${
-              dark
-                ? 'from-emerald-300 via-violet-300 to-emerald-300'
-                : 'from-emerald-400 via-violet-400 to-emerald-400'
-            }`}
+      <div className="relative mx-auto max-w-6xl px-6 py-8">
+
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-white sm:text-5xl flex justify-center space-x-3"
           >
-            Our Services
-          </h2>
+            <div>Our</div>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-violet-300 to-emerald-300">
+              Services
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 text-lg leading-8 text-gray-600 dark:text-white/70"
+          >
+        Explore what we offer and see how our solutions can help you achieve your goals. 
+          </motion.p>
         </div>
+
+
 
         <div
           ref={lineRef}
-          className={`pointer-events-none absolute inset-0 hidden sm:flex justify-center mt-24 transition-all duration-1800 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${
-            lineVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
-          }`}
+          className={`pointer-events-none absolute inset-0 hidden sm:flex justify-center mt-24 transition-all duration-1800 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${lineVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
+            }`}
         >
           <div className="relative h-full w-[3px] overflow-visible">
             <div
-              className={`absolute inset-0 rounded-full bg-linear-to-b ${
-                dark
-                  ? 'from-emerald-300 via-violet-300 to-emerald-300'
-                  : 'from-emerald-400 via-violet-400 to-emerald-400'
-              } animate-pulse-slow`}
+              className={`absolute inset-0 rounded-full bg-linear-to-b ${dark
+                ? 'from-emerald-300 via-violet-300 to-emerald-300'
+                : 'from-emerald-400 via-violet-400 to-emerald-400'
+                } animate-pulse-slow`}
               style={{
                 WebkitMaskImage:
                   'linear-gradient(to bottom, transparent 0, transparent 80px, black 130px, black calc(100% - 40px), transparent 100%)',
@@ -91,18 +106,17 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="space-y-10 lg:space-x-0 relative">
+        <div className="space-y-10 lg:space-y-0 relative">
           {items.map((it, idx) => (
             <div
               key={it.title}
               ref={el => {
                 if (el) cardRefs.current[idx] = el
               }}
-              className={`opacity-0 translate-y-6 transition-all duration-700 ${
-                idx % 2
-                  ? 'flex justify-end sm:translate-x-0 translate-x-3'
-                  : 'flex justify-start sm:translate-x-0 -translate-x-3'
-              }`}
+              className={`opacity-0 translate-y-6 transition-all duration-700 ${idx % 2
+                ? 'flex justify-end sm:translate-x-0 translate-x-3'
+                : 'flex justify-start sm:translate-x-0 -translate-x-3'
+                } ${idx !== 0 ? 'lg:-mt-[15px]' : ''}`}
             >
               <Card
                 icon={it.icon}
