@@ -101,13 +101,14 @@ export default function TeamSection() {
 
                     {member?.social?.linkedin && (
                       <a
+                      onClick={()=>{console.log("jhrhrhrhrhrhrhrhrh")}}
                         href={member.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} on LinkedIn`}
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 
                           bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 
-                          hover:ring-emerald-400/50 dark:hover:ring-violet-400/50 transition"
+                          hover:ring-emerald-400/50 dark:hover:ring-violet-400/50 transition "
                         title="LinkedIn"
                       >
                         <svg
