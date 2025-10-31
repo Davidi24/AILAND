@@ -28,8 +28,11 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
 
   const mouse = useRef({ x: 0, y: 0 })
 
+  // --- INITIAL SCENE SETUP (only once) ---
   useEffect(() => {
-    const wrap = wrapRef.current!
+    const wrap = wrapRef.current
+    if (!wrap) return
+
     const w = wrap.clientWidth
     const h = wrap.clientHeight
 
@@ -81,7 +84,7 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
         emissiveIntensity: 0.15 + zFactor * 0.25,
         shininess: 80,
         transparent: true,
-        opacity: 0.9
+        opacity: 0 // start invisible → fade-in
       })
       const m = new THREE.Mesh(sphereGeo, mat)
       m.position.set(
@@ -123,7 +126,7 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
     const lineMat = new THREE.LineBasicMaterial({
       color: isDark ? 0x8b5cf6 : 0x6b7280,
       transparent: true,
-      opacity: isDark ? 0.22 : 0.18
+      opacity: 0 // fade-in later
     })
     const lineSeg = new THREE.LineSegments(lineGeom, lineMat)
     linesRef.current = lineSeg
@@ -147,6 +150,7 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
     window.addEventListener('resize', onResize)
 
     let t = 0
+    let fade = 0 // fade progress 0→1
     const bounds = new THREE.Box3(
       new THREE.Vector3(-95, -65, -110),
       new THREE.Vector3(95, 65, 110)
@@ -154,6 +158,14 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
 
     const animate = () => {
       t += 0.016
+      if (fade < 1) fade += 0.02
+
+      // smooth fade-in of spheres + lines
+      for (const n of nodes) {
+        const mat = n.mesh.material as THREE.MeshPhongMaterial
+        mat.opacity = Math.min(0.9, fade * 0.9)
+      }
+      lineMat.opacity = Math.min(isDark ? 0.22 : 0.18, fade * (isDark ? 0.22 : 0.18))
 
       group.rotation.y += ((mouse.current.x * 0.35) - group.rotation.y) * 0.04
       group.rotation.x += ((mouse.current.y * 0.25) - group.rotation.x) * 0.04
@@ -206,7 +218,25 @@ export default function ThreeGraphBG({ nodeCount = 110 }: Props) {
       sphereGeo.dispose()
       renderer.dispose()
     }
-  }, [isDark, nodeCount])
+  }, [nodeCount])
+
+  // --- THEME UPDATE EFFECT ---
+  useEffect(() => {
+    const scene = sceneRef.current
+    const lines = linesRef.current
+    const group = groupRef.current
+    if (!scene || !lines || !group) return
+
+    scene.fog!.color = new THREE.Color(isDark ? 0x060607 : 0xf7fafc)
+    const lineMat = lines.material as THREE.LineBasicMaterial
+    lineMat.color = new THREE.Color(isDark ? 0x8b5cf6 : 0x6b7280)
+    lineMat.opacity = isDark ? 0.22 : 0.18
+    group.children.forEach((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.scale.multiplyScalar(isDark ? 1.05 : 0.95)
+      }
+    })
+  }, [isDark])
 
   return (
     <div className="absolute inset-0 -z-10">
