@@ -49,11 +49,13 @@ export default function Services() {
     <section className="relative min-h-[110vh] overflow-hidden transition-colors duration-500 text-black dark:text-white">
       <div className="relative mx-auto max-w-6xl px-6 py-8">
 
-        <SectionTitle
-          title="Our Services"
-          subtitle="Explore what we offer and see how our solutions can help you achieve your goals."
-        />
+        <div className=' mb-20'>
+          <SectionTitle
+            title="Our Services"
+            subtitle="Explore what we offer and see how our solutions can help you achieve your goals."
+          />
 
+        </div>
 
 
 
@@ -62,7 +64,7 @@ export default function Services() {
           className={`pointer-events-none absolute inset-0 hidden sm:flex justify-center mt-24 transition-all duration-1800 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${lineVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
             }`}
         >
-          <div className="relative h-full w-[3px] overflow-visible">
+          <div className="relative h-full w-[3px]  overflow-visible">
             <div
               className={`absolute inset-0 rounded-full bg-linear-to-b ${dark
                 ? 'from-emerald-300 via-violet-300 to-emerald-300'
