@@ -7,7 +7,7 @@ const ThreeGraphBG = dynamic(() => import('./ThreeGraphBG'), { ssr: false })
 
 export default function HomeHero() {
   return (
-    <section className="relative isolate overflow-hidden pt-10">
+    <section className="relative isolate overflow-hidden ">
       <div className="absolute inset-0 -z-10">
         <ThreeGraphBG />
       </div>
