@@ -8,6 +8,7 @@ import TeamSection from '@/components/OurTeam/TeamSection'
 import Contact from "@/components/Contact/Contact"
 import Footer from "@/components/End/Footer"
 import ThreeGraphBG from "./dynamicImport"
+import WhoIsItFor from '@/components/WhoIsItFor/WhoIsItFor'
 
 export default function Home() {
   const [isSmall, setIsSmall] = useState(false)
@@ -38,7 +39,7 @@ export default function Home() {
           </section>
 
           <section id="who">
-            {/* your "Who's it for" component here */}
+            <WhoIsItFor/>
           </section>
 
           <section id="subscription">

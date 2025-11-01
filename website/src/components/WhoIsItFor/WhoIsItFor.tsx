@@ -4,6 +4,7 @@ import SchoolIcon from '@mui/icons-material/School'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import { motion } from 'framer-motion'
+import SectionTitle from '@/Layouts/SectionTitle'
 
 export default function WhoIsItFor() {
   const items = [
@@ -30,8 +31,13 @@ export default function WhoIsItFor() {
       className="relative flex flex-col items-center justify-center overflow-hidden py-40"
     >
       
+      <SectionTitle
+  title="Who’s It For"
+  subtitle="Built for researchers, enterprises, and educators—map networks, model insights, and teach in 3D."
+/>
 
-      <div className="relative w-full max-w-6xl px-10">
+
+      <div className="mt-15 relative w-full max-w-6xl px-10">
         <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-gradient-to-r from-violet-300 to-emerald-300 opacity-90
   [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
   [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]" />
