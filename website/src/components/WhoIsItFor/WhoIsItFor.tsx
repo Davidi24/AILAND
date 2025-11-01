@@ -28,7 +28,7 @@ export default function WhoIsItFor() {
   return (
     <section
       id="who"
-      className="relative flex flex-col items-center justify-center overflow-hidden py-40"
+      className="relative flex flex-col items-center px-6 justify-center mx-auto max-w-7xl overflow-hidden py-35"
     >
       
       <SectionTitle
