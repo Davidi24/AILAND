@@ -14,7 +14,7 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="mx-auto max-w-7xl px-6 py-16 lg:px-8"
+        className="mx-auto max-w-7xl px-6 pb-10 lg:px-8"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
