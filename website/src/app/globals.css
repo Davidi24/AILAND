@@ -30,3 +30,8 @@ body {
 
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 .animate-fadein { animation: fadein 1.2s ease forwards; }
+
+
+html {
+  scroll-behavior: smooth;
+}

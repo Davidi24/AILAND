@@ -12,6 +12,8 @@ import ThreeGraphBG from "./dynamicImport"
 export default function Home() {
   const [isSmall, setIsSmall] = useState(false)
 
+
+
   useEffect(() => {
     const checkSize = () => setIsSmall(window.innerWidth < 768)
     checkSize()
@@ -24,35 +26,45 @@ export default function Home() {
       <main>
         <div className="services">
           <Navbar />
-          <HomeHero />
+          <section id="home">
+            <HomeHero />
+          </section>
 
-          <div className="relative -mt-10 md:mt-0" id='services'>
+          <section className="relative -mt-10 md:mt-0" id="services">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 102 : 32} />
             </div>
             <Services />
-            <div id='subscription'>
-              <SubPage />
-            </div>
-          </div>
+          </section>
 
-          <div className="relative -mt-18 md:mt-0" id="team">
+          <section id="who">
+            {/* your "Who's it for" component here */}
+          </section>
+
+          <section id="subscription">
+            <SubPage />
+          </section>
+
+          <section className="relative -mt-18 md:mt-0" id="team">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 100 : 10} />
             </div>
             <TeamSection />
-          </div>
+          </section>
 
-          <div className="relative -mt-16 md:mt-0">
+          <section className="relative -mt-16 md:mt-0" id="contact">
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 125 : 25} />
             </div>
-            <div id='contact'>
-              <Contact />
-            </div>
-            <div className='-mt-22 md:mt-0'>
-              <Footer />
-            </div>
+            <Contact />
+          </section>
+
+          <section id="blog">
+            {/* optional blog section */}
+          </section>
+
+          <div className='-mt-3 md:mt-0'>
+            <Footer />
           </div>
         </div>
       </main>

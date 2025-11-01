@@ -23,10 +23,30 @@ export default function Navbar() {
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
   useEffect(() => {
+  const handleClickOutside = (e: MouseEvent) => {
+    const menu = document.querySelector('header')
+    if (open && menu && !menu.contains(e.target as Node)) setOpen(false)
+  }
+
+  const handleScrollClose = () => {
+    if (open) setOpen(false)
+  }
+
+  document.addEventListener('click', handleClickOutside)
+  window.addEventListener('scroll', handleScrollClose, { passive: true })
+
+  return () => {
+    document.removeEventListener('click', handleClickOutside)
+    window.removeEventListener('scroll', handleScrollClose)
+  }
+}, [open])
+
+
+  useEffect(() => {
     const ids = sectionIds
     const getCurrent = () => {
       const y = window.scrollY + window.innerHeight / 2
-      let current: string = '#home'
+      let current: string = ''
       for (const id of ids) {
         const el = document.getElementById(id)
         if (!el) continue
