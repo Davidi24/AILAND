@@ -11,7 +11,7 @@ const links = [
   { href: '#subscription', label: 'Subscription' },
   { href: '#team', label: 'Our Team' },
   { href: '#contact', label: 'Contact' },
-  { href: '#blog', label: 'Blog' },
+  { href: '/blog', label: 'Blog' },
 ]
 
 export default function Navbar() {
