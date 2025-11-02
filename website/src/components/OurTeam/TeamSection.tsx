@@ -73,8 +73,10 @@ export default function TeamSection() {
                           transition-all duration-300
                           hover:scale-110 hover:ring-emerald-400/50 dark:hover:ring-violet-400/50
                           hover:shadow-[0_0_12px_rgba(62,244,197,0.45),0_0_18px_rgba(167,139,250,0.3)] 
+    
                           dark:hover:shadow-[0_0_12px_rgba(167,139,250,0.45),0_0_18px_rgba(62,244,197,0.3)]"
-                        title="GitHub"
+                       
+                          title="GitHub"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -101,25 +103,32 @@ export default function TeamSection() {
 
                     {member?.social?.linkedin && (
                       <a
-                      onClick={()=>{console.log("jhrhrhrhrhrhrhrhrh")}}
-                        href={member.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on LinkedIn`}
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-black/10 dark:ring-white/10 
-                          bg-white/60 dark:bg-white/10 backdrop-blur hover:scale-105 
-                          hover:ring-emerald-400/50 dark:hover:ring-violet-400/50 transition "
-                        title="LinkedIn"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5 text-gray-800 dark:text-white"
-                        >
-                          <path d="M4.98 3.5C4.98 4.61 4.08 5.5 2.97 5.5S.97 4.61.97 3.5C.97 2.39 1.87 1.5 2.98 1.5s2 .89 2 2zM1 8h4v14H1zM8 8h4v2.09h.06c.56-1.06 1.92-2.18 3.95-2.18 4.23 0 5.01 2.79 5.01 6.42V22H17v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.42V22H8V8z" />
-                        </svg>
-                      </a>
+                    onClick={() => { console.log("jhrhrhrhrhrhrhrhrh"); }}
+                    href={member.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                    className="group/icon relative inline-flex h-9 w-9 items-center justify-center rounded-full 
+                      ring-1 ring-black/10 dark:ring-white/10 
+                      bg-white/60 dark:bg-white/10 backdrop-blur 
+                      transition-all duration-300
+                      hover:scale-110 hover:ring-emerald-400/50 dark:hover:ring-violet-400/50
+                      hover:shadow-[0_0_12px_rgba(62,244,197,0.45),0_0_18px_rgba(167,139,250,0.3)] 
+                      dark:hover:shadow-[0_0_12px_rgba(167,139,250,0.45),0_0_18px_rgba(62,244,197,0.3)]"
+                    title="LinkedIn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-5 w-5 text-gray-800 dark:text-white 
+                        transition-colors duration-300 
+                        group-hover/icon:text-emerald-400 dark:group-hover/icon:text-violet-400"
+                    >
+                      <path d="M4.98 3.5C4.98 4.61 4.08 5.5 2.97 5.5S.97 4.61.97 3.5C.97 2.39 1.87 1.5 2.98 1.5s2 .89 2 2zM1 8h4v14H1zM8 8h4v2.09h.06c.56-1.06 1.92-2.18 3.95-2.18 4.23 0 5.01 2.79 5.01 6.42V22H17v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.42V22H8V8z" />
+                    </svg>
+                  </a>
+
                     )}
                   </div>
                 )}
