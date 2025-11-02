@@ -5,12 +5,12 @@ import { useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 const links = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#who', label: "Who's it for" },
-  { href: '#subscription', label: 'Subscription' },
-  { href: '#team', label: 'Our Team' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#who', label: "Who's it for" },
+  { href: '/#subscription', label: 'Subscription' },
+  { href: '/#team', label: 'Our Team' },
+  { href: '/#contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
 ]
 
