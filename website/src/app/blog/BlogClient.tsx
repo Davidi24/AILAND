@@ -1,20 +1,15 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import SectionTitle from '@/Layouts/SectionTitle'
-import SiteBackground from '@/components/Background/SiteBackground'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const ThreeGraphBG = dynamic(() => import('@/components/Home/ThreeGraphBG'), { ssr: false })
 
 export default function BlogClient({ posts }: { posts: any[] }) {
     return (
         <div className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pt-32 pb-32 px-4">
-            <SiteBackground />
-            <ThreeGraphBG nodeCount={60} />
-
+  
             <SectionTitle
                 title="AILand Blog"
                 subtitle="Stories, reports, and insights from our journey in AI-powered immersive knowledge visualization."
