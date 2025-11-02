@@ -147,20 +147,20 @@ export default function Footer() {
           <div className="flex gap-6 text-sm">
             <a
               href="#"
-              className="text-gray-500 dark:text-gray-600 hover:text-gray-300 transition-colors"
+              className="text-gray-500 dark:text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-gray-500 dark:text-gray-600 hover:text-gray-300 transition-colors"
+              className="text-gray-500 dark:text-gray-600 hover:text-gray-300 transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
             >
               Imprint
             </a>
           </div>
         </motion.div>
         <div>
-          <p className="text-gray-500 dark:text-gray-600 text-sm font-bold">
+          <p className="text-gray-500 dark:text-gray-600 text-sm font-bold ">
             This website is part of a university project and does not constitute a legally registered company.
           </p>
 
