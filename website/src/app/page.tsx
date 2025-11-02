@@ -9,6 +9,7 @@ import Contact from "@/components/Contact/Contact"
 import Footer from "@/components/End/Footer"
 import ThreeGraphBG from "./dynamicImport"
 import WhoIsItFor from '@/components/WhoIsItFor/WhoIsItFor'
+import ScrollToTop from '@/components/End/ScrollToTop'
 
 export default function Home() {
   const [isSmall, setIsSmall] = useState(false)
@@ -67,6 +68,8 @@ export default function Home() {
           <div className='-mt-3 md:mt-0'>
             <Footer />
           </div>
+
+          <ScrollToTop/>
         </div>
       </main>
     </div>
