@@ -42,7 +42,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-white text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-gray-500 text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               {[
                 { name: 'Home', id: 'home' },
@@ -68,7 +68,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
 
-            <h4 className="text-white text-lg font-semibold mb-4">Contact us</h4>
+            <h4 className="text-gray-500 text-lg font-semibold mb-4">Contact us</h4>
 
             <div className="flex items-center gap-4">
               <a

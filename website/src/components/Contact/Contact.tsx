@@ -126,7 +126,7 @@ export default function Contact() {
                                 disabled={isSubmitting}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full group inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-base font-medium text-white dark:text-black bg-gradient-to-r from-emerald-300 to-violet-300 shadow-[0_10px_30px_-10px_rgba(139,92,246,0.6)] hover:shadow-[0_18px_40px_-12px_rgba(16,185,129,0.7)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="cursor-pointer w-full group inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-base font-medium text-white dark:text-black bg-gradient-to-r from-emerald-300 to-violet-300 shadow-[0_10px_30px_-10px_rgba(139,92,246,0.6)] hover:shadow-[0_18px_40px_-12px_rgba(16,185,129,0.7)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -144,7 +144,9 @@ export default function Contact() {
                                         Sent!
                                     </>
                                 ) : (
+                                    
                                     <>
+                                    
                                         Send Message
                                         <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor">
                                             <path transform="rotate(90 10 10)" d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
