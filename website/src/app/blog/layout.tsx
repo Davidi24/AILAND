@@ -12,7 +12,10 @@ export default function BlogLayout({
         <div className="">
             <Navbar />
             <ThreeGraphBG nodeCount={60} />
-            {children}
+            <div className="pt-32">
+                 {children}
+            </div>
+           
         </div>
     )
 }

@@ -19,7 +19,8 @@ export default function SectionTitle({ title, subtitle }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-white sm:text-5xl flex justify-center space-x-3"
+        className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-white sm:text-5xl flex justify-center space-x-3 leading-[1.15]
+"
       >
         {firstWords && <div>{firstWords}</div>}
         {lastWord && (
