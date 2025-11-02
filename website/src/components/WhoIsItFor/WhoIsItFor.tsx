@@ -28,24 +28,19 @@ export default function WhoIsItFor() {
   return (
     <section
       id="who"
-      className="relative flex flex-col items-center px-6 justify-center mx-auto max-w-7xl overflow-hidden py-35"
+      className="relative flex flex-col items-center px-4 sm:px-6 justify-center mx-auto max-w-7xl overflow-hidden"
     >
-      
       <SectionTitle
-  title="Who’s It For"
-  subtitle="Built for researchers, enterprises, and educators—map networks, model insights, and teach in 3D."
-/>
+        title="Who’s It For"
+        subtitle="Built for researchers, enterprises, and educators—map networks, model insights, and teach in 3D."
+      />
 
+      <div className="mt-15 relative w-full max-w-6xl px-2 sm:px-10">
+        <div className="hidden md:block absolute left-0 right-0 top-1/2 h-[1px] bg-gradient-to-r from-violet-300 to-emerald-300 opacity-90
+        [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
+        [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]" />
 
-      <div className="mt-15 relative w-full max-w-6xl px-10">
-        <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-gradient-to-r from-violet-300 to-emerald-300 opacity-90
-  [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
-  [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]" />
-
-
-
-        {/* dots exactly under each circle on the line */}
-        <div className="pointer-events-none absolute inset-x-10 top-1/2 grid grid-cols-3 -translate-y-1/2 z-10">
+        <div className="hidden md:grid pointer-events-none absolute inset-x-10 top-1/2 grid-cols-3 -translate-y-1/2 z-10">
           {items.map((_, i) => (
             <span
               key={`dot-${i}`}
@@ -54,7 +49,6 @@ export default function WhoIsItFor() {
           ))}
         </div>
 
-        {/* content in the same 3 columns to keep perfect alignment */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 items-start">
           {items.map((item, i) => (
             <motion.div
@@ -63,19 +57,19 @@ export default function WhoIsItFor() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="relative flex flex-col items-center text-center"
+              className="relative flex flex-col items-center text-center px-4 sm:px-6"
             >
-              <div className="relative mb-10">
+              <div className="relative mb-6 sm:mb-10">
                 <div className="absolute inset-0 blur-2xl opacity-60 bg-gradient-to-r from-emerald-400 via-violet-400 to-emerald-400 rounded-full" />
-                <div className="w-23 h-23 flex items-center justify-center rounded-full bg-gray-900/60 border border-white/10 shadow-[0_0_30px_rgba(150,250,200,0.15)] backdrop-blur-md hover:scale-105 transition-transform duration-500">
+                <div className="w-20 h-20 sm:w-23 sm:h-23 flex items-center justify-center rounded-full bg-gray-900/60 border border-white/10 shadow-[0_0_30px_rgba(150,250,200,0.15)] backdrop-blur-md hover:scale-105 transition-transform duration-500">
                   <div className="text-white/90">{item.icon}</div>
                 </div>
               </div>
 
-              <h3 className="mt-10 text-lg font-semibold bg-gradient-to-r from-violet-300 to-emerald-300 bg-clip-text text-transparent">
+              <h3 className="mt-3 sm:mt-10 text-base sm:text-lg font-semibold bg-gradient-to-r from-violet-300 to-emerald-300 bg-clip-text text-transparent">
                 {item.title}
               </h3>
-              <ul className="mt-2 space-y-1 text-gray-400 text-sm">
+              <ul className="mt-1 sm:mt-2 space-y-1 text-gray-400 text-sm sm:text-base">
                 {item.points.map((p, j) => (
                   <li key={j} className="hover:text-white transition">
                     {p}
