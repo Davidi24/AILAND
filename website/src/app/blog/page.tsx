@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import BlogClient from './BlogClient'
-import Navbar from '@/components/Home/Navbar'
 
 export const metadata = {
   title: 'AILand Blog',
@@ -28,9 +27,8 @@ export default function BlogPage() {
 
   return (
     <>
-    <Navbar />
-  <BlogClient posts={posts} />
+      <BlogClient posts={posts} />
     </>
   )
-  
+
 }

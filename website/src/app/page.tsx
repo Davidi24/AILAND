@@ -38,7 +38,7 @@ export default function Home() {
             <Services />
           </section>
 
-          <section id="who">
+          <section id="who" className='lg:py-20 lg:mt-5'>
             <WhoIsItFor/>
           </section>
 
