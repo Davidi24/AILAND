@@ -18,7 +18,7 @@ export const plans: Plan[] = [
   },
   {
     name: "Pro",
-    price: "€99",
+    price: "€19",
     cadence: "/month",
     cta: { label: "Start Pro Trial", href: "/#contact" },
     features: [

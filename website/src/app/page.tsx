@@ -60,11 +60,7 @@ export default function Home() {
             </div>
             <Contact />
           </section>
-
-          <section id="blog">
-            {/* optional blog section */}
-          </section>
-
+          
           <div className='-mt-3 md:mt-0'>
             <Footer />
           </div>
