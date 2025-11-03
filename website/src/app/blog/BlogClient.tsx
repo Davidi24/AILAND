@@ -38,7 +38,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="group relative w-[250px] sm:w-[270px] rounded-xl p-[1px] transition-all"
+            className="group relative w-[250px] sm:w-[270px] rounded-xl p-[1px] transition-all min-w-fit px-4 sm:px-0"
           >
             <CardLayout  maxWidth="max-w-full"  minWidth="full">
               <div className="-m-6 relative rounded-2xl overflow-hidden flex flex-col h-full">
