@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: 'AILand',
   description: 'AILand - Your AI Solutions',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
   },
 };
 
