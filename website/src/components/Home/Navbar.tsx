@@ -42,11 +42,6 @@ export default function Navbar() {
   useEffect(() => {
     const ids = sectionIds
     const getCurrent = () => {
-      const hash = window.location.hash
-      if (hash) {
-        setActive(hash)
-        return
-      }
       const y = window.scrollY + window.innerHeight / 2
       let current: string = ''
       for (const id of ids) {
@@ -108,13 +103,15 @@ export default function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-6 md:gap-8">
             {links.map(l => {
-              const isActive =
-                (pathname === '/blog' && l.href === '/blog') ||
-                (pathname !== '/blog' && active === l.href.replace('/', '') || active === l.href)
+              const correctHref = l.href
+     const isActive =
+  (pathname === '/blog' && l.href === '/blog') ||
+  (pathname !== '/blog' && (active === l.href.replace('/', '') || active === l.href))
+
               return (
                 <li key={l.href}>
                   <Link
-                    href={l.href}
+                    href={correctHref}
                     onClick={() => setActive(l.href.replace('/', ''))}
                     className={`group relative text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-white/70 dark:hover:text-white ${isActive ? 'text-gray-900 dark:text-white' : ''}`}
                   >
@@ -157,13 +154,12 @@ export default function Navbar() {
       >
         <ul className="flex flex-col text-left divide-y w-full divide-black/10 dark:divide-white/10">
           {links.map(l => {
-            const isActive =
-              (pathname === '/blog' && l.href === '/blog') ||
-              (pathname !== '/blog' && active === l.href.replace('/', '') || active === l.href)
+            const correctHref = l.href
+            const isActive = active === l.href.replace('/', '') || active === l.href
             return (
               <li key={l.href} className="py-2">
                 <Link
-                  href={l.href}
+                  href={correctHref}
                   onClick={() => {
                     setActive(l.href.replace('/', ''))
                     setOpen(false)
