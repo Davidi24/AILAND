@@ -49,10 +49,11 @@ export default function Footer() {
                 { name: 'Who Is It For', id: 'who' },
                 { name: 'Subscription', id: 'subscription' },
                 { name: 'Our Team', id: 'team' },
+                { name: 'Blog', href: '/blog' },
               ].map((item, i) => (
                 <li key={i}>
                   <a
-                    href={`#${item.id}`}
+                    href={item.href ? item.href : `/#${item.id}`}
                     className="text-gray-400 dark:text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
                   >
                     {item.name}
@@ -78,7 +79,7 @@ export default function Footer() {
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-violet-200 hover:to-emerald-200 hover:shadow-lg hover:shadow-violet-200/50 dark:bg-white/5 dark:hover:from-violet-300/20 dark:hover:to-emerald-300/20 dark:hover:shadow-violet-500/30 transition-all group cursor-pointer"
               >
                 <svg
-                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-violet-600 group-hover:scale-110 dark:group-hover:text-emerald-400 transition-all"
+                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white group-hover:scale-110 dark:group-hover:text-emerald-200 transition-all"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -94,7 +95,7 @@ export default function Footer() {
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-violet-200 hover:to-emerald-200 hover:shadow-lg hover:shadow-violet-200/50 dark:bg-white/5 dark:hover:from-violet-300/20 dark:hover:to-emerald-300/20 dark:hover:shadow-violet-500/30 transition-all group cursor-pointer"
               >
                 <svg
-                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-violet-600 group-hover:scale-110 dark:group-hover:text-emerald-400 transition-all"
+                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white group-hover:scale-110 dark:group-hover:text-emerald-200 transition-all"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -108,7 +109,7 @@ export default function Footer() {
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-violet-200 hover:to-emerald-200 hover:shadow-lg hover:shadow-violet-200/50 dark:bg-white/5 dark:hover:from-violet-300/20 dark:hover:to-emerald-300/20 dark:hover:shadow-violet-500/30 transition-all group cursor-pointer"
               >
                 <svg
-                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-violet-600 group-hover:scale-110 dark:group-hover:text-emerald-400 transition-all"
+                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white group-hover:scale-110 dark:group-hover:text-emerald-200 transition-all"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -124,7 +125,7 @@ export default function Footer() {
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-violet-200 hover:to-emerald-200 hover:shadow-lg hover:shadow-violet-200/50 dark:bg-white/5 dark:hover:from-violet-300/20 dark:hover:to-emerald-300/20 dark:hover:shadow-violet-500/30 transition-all group cursor-pointer"
               >
                 <svg
-                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-violet-600 group-hover:scale-110 dark:group-hover:text-emerald-400 transition-all"
+                  className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white group-hover:scale-110 dark:group-hover:text-emerald-200 transition-all"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -139,28 +140,28 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-gray-800 dark:border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="border-t border-gray-300 dark:border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-gray-500 dark:text-gray-600 text-sm">
+          <p className="text-gray-500 dark:text-gray-600 text-xs">
             © {currentYear} AILand. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-xs">
             <a
               href="#"
-              className="text-gray-500 dark:text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
+              className="text-gray-400 dark:text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-gray-500 dark:text-gray-600 hover:text-gray-300 transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
+              className="text-gray-400 dark:text-gray-600 hover:text-gray-300 transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
             >
               Imprint
             </a>
           </div>
         </motion.div>
         <div>
-          <p className="text-gray-500 dark:text-gray-600 text-sm font-bold ">
+          <p className="text-gray-400 dark:text-gray-600 text-xs font-medium ">
             This website is part of a university project and does not constitute a legally registered company.
           </p>
 
