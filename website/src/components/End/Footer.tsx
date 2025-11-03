@@ -145,20 +145,15 @@ export default function Footer() {
           <p className="text-gray-500 dark:text-gray-600 text-xs">
             © {currentYear} AILand. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs">
-            <a
-              href="#"
-              className="text-gray-400 dark:text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
-            >
-              Privacy Policy
+          <div className="flex space-x-6 text-sm text-gray-400">
+            <a href="/impressum" className="hover:text-emerald-400 transition">
+              Impressum
             </a>
-            <a
-              href="#"
-              className="text-gray-400 dark:text-gray-600 hover:text-gray-300 transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-300 hover:to-emerald-300 transition-all"
-            >
-              Imprint
+            <a href="/datenschutz" className="hover:text-violet-400 transition">
+              Datenschutz
             </a>
           </div>
+
         </motion.div>
         <div>
           <p className="text-gray-400 dark:text-gray-600 text-xs font-medium ">

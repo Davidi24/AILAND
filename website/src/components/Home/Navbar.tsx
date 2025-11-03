@@ -104,9 +104,9 @@ export default function Navbar() {
           <ul className="hidden lg:flex items-center gap-6 md:gap-8">
             {links.map(l => {
               const correctHref = l.href
-     const isActive =
-  (pathname === '/blog' && l.href === '/blog') ||
-  (pathname !== '/blog' && (active === l.href.replace('/', '') || active === l.href))
+              const isActive =
+                (pathname === '/blog' && l.href === '/blog') ||
+                (pathname !== '/blog' && (active === l.href.replace('/', '') || active === l.href))
 
               return (
                 <li key={l.href}>
