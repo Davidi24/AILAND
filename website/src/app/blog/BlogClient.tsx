@@ -7,12 +7,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import CardLayout from '@/Layouts/CardLayout'
 import { useTheme } from 'next-themes'
-
-const ThreeGraphBG = dynamic(() => import('@/components/Home/ThreeGraphBG'), { ssr: false })
+import { useEffect } from 'react'
 
 export default function BlogClient({ posts }: { posts: any[] }) {
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
+
+    useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pb-32 px-4">
@@ -37,7 +40,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
             transition={{ duration: 0.6, delay: i * 0.1 }}
             className="group relative w-[250px] sm:w-[270px] rounded-xl p-[1px] transition-all"
           >
-            <CardLayout>
+            <CardLayout  maxWidth="max-w-full"  minWidth="fit-content">
               <div className="-m-6 relative rounded-2xl overflow-hidden flex flex-col h-full">
                 {post.image && (
                   <div className="relative h-32 w-full overflow-hidden">

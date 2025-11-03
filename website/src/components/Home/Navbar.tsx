@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/#home', label: 'Home' },
@@ -17,34 +18,35 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string>('#home')
-  const sectionIds = useMemo(() => links.map(l => l.href.replace('#', '')), [])
+  const sectionIds = useMemo(() => links.filter(l => l.href.startsWith('/#')).map(l => l.href.slice(2)), [])
   const { theme, setTheme } = useTheme()
-
+  const pathname = usePathname()
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
   useEffect(() => {
-  const handleClickOutside = (e: MouseEvent) => {
-    const menu = document.querySelector('header')
-    if (open && menu && !menu.contains(e.target as Node)) setOpen(false)
-  }
-
-  const handleScrollClose = () => {
-    if (open) setOpen(false)
-  }
-
-  document.addEventListener('click', handleClickOutside)
-  window.addEventListener('scroll', handleScrollClose, { passive: true })
-
-  return () => {
-    document.removeEventListener('click', handleClickOutside)
-    window.removeEventListener('scroll', handleScrollClose)
-  }
-}, [open])
-
+    const handleClickOutside = (e: MouseEvent) => {
+      const menu = document.querySelector('header')
+      if (open && menu && !menu.contains(e.target as Node)) setOpen(false)
+    }
+    const handleScrollClose = () => {
+      if (open) setOpen(false)
+    }
+    document.addEventListener('click', handleClickOutside)
+    window.addEventListener('scroll', handleScrollClose, { passive: true })
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+      window.removeEventListener('scroll', handleScrollClose)
+    }
+  }, [open])
 
   useEffect(() => {
     const ids = sectionIds
     const getCurrent = () => {
+      const hash = window.location.hash
+      if (hash) {
+        setActive(hash)
+        return
+      }
       const y = window.scrollY + window.innerHeight / 2
       let current: string = ''
       for (const id of ids) {
@@ -57,7 +59,7 @@ export default function Navbar() {
           break
         }
       }
-      setActive(current)
+      setActive(current || '')
     }
     let ticking = false
     const onScroll = () => {
@@ -106,12 +108,14 @@ export default function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-6 md:gap-8">
             {links.map(l => {
-              const isActive = active === l.href
+              const isActive =
+                (pathname === '/blog' && l.href === '/blog') ||
+                (pathname !== '/blog' && active === l.href.replace('/', '') || active === l.href)
               return (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    onClick={() => setActive(l.href)}
+                    onClick={() => setActive(l.href.replace('/', ''))}
                     className={`group relative text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-white/70 dark:hover:text-white ${isActive ? 'text-gray-900 dark:text-white' : ''}`}
                   >
                     {l.label}
@@ -153,13 +157,15 @@ export default function Navbar() {
       >
         <ul className="flex flex-col text-left divide-y w-full divide-black/10 dark:divide-white/10">
           {links.map(l => {
-            const isActive = active === l.href
+            const isActive =
+              (pathname === '/blog' && l.href === '/blog') ||
+              (pathname !== '/blog' && active === l.href.replace('/', '') || active === l.href)
             return (
               <li key={l.href} className="py-2">
                 <Link
                   href={l.href}
                   onClick={() => {
-                    setActive(l.href)
+                    setActive(l.href.replace('/', ''))
                     setOpen(false)
                   }}
                   className={`block w-full text-base font-medium text-black/60 dark:text-white/90 ${isActive ? 'text-black dark:text-white' : ''}`}

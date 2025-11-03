@@ -25,6 +25,8 @@ export default function BlogPage() {
     }
   })
 
+  
+
   return (
     <>
       <BlogClient posts={posts} />
