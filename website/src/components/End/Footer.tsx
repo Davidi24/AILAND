@@ -157,7 +157,7 @@ export default function Footer() {
         </motion.div>
         <div>
           <p className="text-gray-400 dark:text-gray-600 text-xs font-medium ">
-            This website is part of a university project and does not constitute a legally registered company.
+            This website does not belong to a real company. It is a Planspiel Web Engineering project at University of Technology Chemnitz.
           </p>
 
         </div>
