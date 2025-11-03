@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
     id: "tamanna",
     name: "Tammanna Rahman",
     role: "Software Engineer",
-    funFact: "Builds worlds where data comes to life in AR. test test test ",
+    funFact: "Building smart, data-driven applications that make technology feel human.",
     photo: "/team/Tamannaa.png",
     social: {
       github: " https://github.com/TechDeitySpark ",
