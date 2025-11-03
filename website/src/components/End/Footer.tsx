@@ -147,10 +147,10 @@ export default function Footer() {
           </p>
           <div className="flex space-x-6 text-sm text-gray-400">
             <a href="/impressum" className="hover:text-emerald-400 transition">
-              Impressum
+              Imprint
             </a>
             <a href="/datenschutz" className="hover:text-violet-400 transition">
-              Datenschutz
+              Privacy Policy
             </a>
           </div>
 
