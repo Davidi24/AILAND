@@ -6,11 +6,10 @@ type Props = {
   children: React.ReactNode
   dark?: boolean
   maxWidth?: string
-  minWidth?: string
   padding?: string
 }
 
-export default function CardLayout({ children, maxWidth, minWidth, padding }: Props) {
+export default function CardLayout({ children, maxWidth, padding }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const onMove = (e: React.MouseEvent) => {
@@ -43,18 +42,17 @@ export default function CardLayout({ children, maxWidth, minWidth, padding }: Pr
       onMouseMove={onMove}
       onMouseLeave={onLeave}
     >
-  <div
-  ref={ref}
-  className={`relative w-full 
+      <div
+        ref={ref}
+        className={`relative w-full 
   ${maxWidth ? `max-w-[${maxWidth}]` : 'max-w-md'} 
-  ${minWidth ? `min-w-[${minWidth}]` : ''} 
   rounded-2xl border backdrop-blur transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
   will-change-transform hover:-translate-y-1
   border-black/5 bg-white/10 supports-backdrop-filter:bg-white/30 shadow-sm 
   hover:bg-white/60 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]
   dark:border-white/10 dark:bg-white/5 
   dark:hover:bg-white/10 dark:hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]`}
->
+      >
 
         <div
           className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
