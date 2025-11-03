@@ -29,7 +29,7 @@ export const team: TeamMember[] = [
     name: "Erisa Zaimi",
     role: "Frontend Engineer",
     funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
-    photo: "/team/era.png",
+    photo: "/team/erap.png",
     social: {
       github: "https://github.com/ezaimi",
       linkedin: " https://www.linkedin.com/in/erisazaimi/ ",
