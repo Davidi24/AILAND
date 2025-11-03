@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import NodeStyles from './NodeStyle'
 import FeatureBoxes from './FeatureBoxes'
+import ThreeGraphBG from '@/app/dynamicImport'
 
-const ThreeGraphBG = dynamic(() => import('./ThreeGraphBG'), { ssr: false })
 
 export default function HomeHero() {
   return (
