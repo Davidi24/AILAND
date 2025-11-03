@@ -1,4 +1,3 @@
-import SiteBackground from "@/components/Background/SiteBackground"
 import Navbar from "@/components/Home/Navbar"
 import ThreeGraphBG from "../dynamicImport"
 
