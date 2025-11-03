@@ -67,22 +67,22 @@ export default function WhoIsItFor() {
             >
               {/* glowing circle */}
               <div className="relative mb-6 sm:mb-10">
-  {/* soft glow behind */}
-  <div className="absolute inset-0 blur-2xl opacity-60 bg-gradient-to-r from-emerald-400 via-violet-400 to-emerald-400 rounded-full" />
+                {/* soft glow behind */}
+                <div className="absolute inset-0 blur-2xl opacity-60 bg-gradient-to-r from-emerald-400 via-violet-400 to-emerald-400 rounded-full" />
 
-  {/* gradient border wrapper */}
-  <div className="p-[3px] rounded-full bg-gradient-to-r from-emerald-300 to-violet-300">
-    {/* inner circle */}
-    <div
-      className="w-20 h-20 sm:w-23 sm:h-23 flex items-center justify-center rounded-full
+                {/* gradient border wrapper */}
+                <div className="p-[3px] rounded-full bg-gradient-to-r from-emerald-300 to-violet-300 dark:bg-none">
+                  {/* inner circle */}
+                  <div
+                    className="w-20 h-20 sm:w-23 sm:h-23 flex items-center justify-center rounded-full
       bg-gray-100 dark:bg-gray-900/60
       shadow-[0_0_30px_rgba(150,250,200,0.15)] dark:shadow-[0_0_30px_rgba(150,250,200,0.15)]
       backdrop-blur-md hover:scale-105 transition-transform duration-500"
-    >
-      <div className="text-gray-700 dark:text-white/90">{item.icon}</div>
-    </div>
-  </div>
-</div>
+                  >
+                    <div className="text-gray-700 dark:text-white/90">{item.icon}</div>
+                  </div>
+                </div>
+              </div>
 
 
               {/* title */}
