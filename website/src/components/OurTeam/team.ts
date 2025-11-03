@@ -17,7 +17,7 @@ export const team: TeamMember[] = [
     id: "david",
     name: "David Keçi",
     role: "Full Stack Developer",
-    funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
+    funFact: "I code by day and fix the bugs I created by night amd call it part of the plan.",
     photo: "/team/david.jpg",
     social: {
       github: "https://github.com/Davidi24 ",
@@ -38,7 +38,7 @@ export const team: TeamMember[] = [
   {
     id: "tamanna",
     name: "Tammanna Rahman",
-    role: "Full Stack Software Engineer",
+    role: "Software Engineer",
     funFact: "Builds worlds where data comes to life in AR.",
     photo: "/team/Tamannaa.png",
     social: {
