@@ -46,7 +46,7 @@ export default function Services() {
   }, [])
 
   return (
-    <section className="relative min-h-[110vh] overflow-hidden transition-colors duration-500 text-black dark:text-white">
+<section id="services" className="scroll-mt-32 relative min-h-fit overflow-hidden transition-colors duration-500 text-black dark:text-white">
       <div className="relative mx-auto max-w-6xl px-6 py-8">
 
         <div className=' mb-20'>
