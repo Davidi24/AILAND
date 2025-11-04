@@ -84,9 +84,9 @@ export default function Navbar() {
           <div className="flex items-center gap-0 leading-none -ml-2 lg:-ml-4">
             <Link href="/" className="inline-flex items-center">
               <img
-                src="/assets/icons/ailand-a-logo.svg"
+                src="/assets/icons/ailand-icon2.png"
                 alt="AILand logo"
-                className="h-20 w-20 shrink-0"
+                className="h-25 w-25 shrink-0"
               />
             </Link>
           </div>

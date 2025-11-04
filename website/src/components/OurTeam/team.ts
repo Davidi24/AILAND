@@ -4,8 +4,8 @@ export const team: TeamMember[] = [
   {
     id: "klea",
     name: "Klea Haxhiu",
-    role: "Product Designer",
-    funFact: "Loves turning knowledge graphs into beautiful, intuitive UIs.",
+    role: "Software Engineer",
+    funFact: "I build tools where ‘it works on my machine’ becomes ‘it works everywhere.’",
     photo: "/team/kl.jpg",
     verified: true,
     social: {
@@ -38,7 +38,7 @@ export const team: TeamMember[] = [
   {
     id: "tamanna",
     name: "Tammanna Rahman",
-    role: "Software Engineer",
+    role: "Software Engineer & Researcher",
     funFact: "Building smart, data-driven applications that make technology feel human.",
     photo: "/team/Tamannaa.png",
     social: {
