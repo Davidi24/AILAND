@@ -13,6 +13,17 @@ export const team: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/klea-haxhiu-90218a257/",
     },
   },
+    {
+    id: "era",
+    name: "Erisa Zaimi",
+    role: "UI/UX Designer & Frontend Developer",
+    funFact: "I turn “why doesn’t this work?” into “I meant to do that.”",
+    photo: "/team/erap.png",
+    social: {
+      github: "https://github.com/ezaimi",
+      linkedin: " https://www.linkedin.com/in/erisazaimi/ ",
+    },
+  },
   {
     id: "david",
     name: "David Keçi",
@@ -25,21 +36,10 @@ export const team: TeamMember[] = [
     },
   },
   {
-    id: "era",
-    name: "Erisa Zaimi",
-    role: "UI/UX Designer & Frontend Developer",
-    funFact: "I turn “why doesn’t this work?” into “I meant to do that.”",
-    photo: "/team/erap.png",
-    social: {
-      github: "https://github.com/ezaimi",
-      linkedin: " https://www.linkedin.com/in/erisazaimi/ ",
-    },
-  },
-  {
     id: "tamanna",
     name: "Tammanna Rahman",
     role: "Software Engineer & Researcher",
-    funFact: "Building smart, data-driven applications that make technology feel human.",
+    funFact: "Turning research into real-world software.",
     photo: "/team/Tamannaa.png",
     social: {
       github: " https://github.com/TechDeitySpark ",
