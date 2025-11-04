@@ -53,7 +53,7 @@ export const team: TeamMember[] = [
     funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
     photo: "/team/qasim.png",
     social: {
-      github: "hhttps://github.com/Qasim-Abdullah",
+      github: "https://github.com/Qasim-Abdullah",
       linkedin: "http://www.linkedin.com/in/qasim-abdullah",
     },
   },
