@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     id: "qasim",
     name: "Qasim Abdullah",
     role: "Frontend Engineer",
-    funFact: "Typescript fanatic and Tailwind whisperer test test test test test test.",
+    funFact: "Code fuels me like coffee — one bug at a time. Create bugs and hunt them down.",
     photo: "/team/qasim.png",
     social: {
       github: "https://github.com/Qasim-Abdullah",
