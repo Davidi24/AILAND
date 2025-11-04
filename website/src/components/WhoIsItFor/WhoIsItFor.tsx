@@ -28,7 +28,7 @@ export default function WhoIsItFor() {
   return (
     <section
       id="who"
-      className="relative flex flex-col items-center px-4 sm:px-6 justify-center mx-auto max-w-7xl overflow-hidden"
+      className="scroll-mt-32 relative flex flex-col items-center px-4 sm:px-6 justify-center mx-auto max-w-7xl overflow-hidden"
     >
       <SectionTitle
         title="Who’s It For"

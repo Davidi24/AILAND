@@ -32,14 +32,14 @@ export default function Home() {
             <HomeHero />
           </section>
 
-          <section className="relative -mt-10 md:mt-0" id="services">
+          <section className="relative -mt-10 md:mt-0" >
             <div className="absolute inset-0 -z-10">
               <ThreeGraphBG nodeCount={isSmall ? 102 : 32} />
             </div>
             <Services />
           </section>
 
-          <section id="who" className='lg:py-20 lg:mt-5'>
+          <section className='py-10 lg:py-12 mt-14 '>
             <WhoIsItFor/>
           </section>
 
