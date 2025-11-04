@@ -119,7 +119,7 @@ export default function Footer() {
 
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/ailand_tuc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-violet-200 hover:to-emerald-200 hover:shadow-lg hover:shadow-violet-200/50 dark:bg-white/5 dark:hover:from-violet-300/20 dark:hover:to-emerald-300/20 dark:hover:shadow-violet-500/30 transition-all group cursor-pointer"
