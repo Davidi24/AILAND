@@ -5,6 +5,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/Sidebar/sidebar
 import { AppSidebar } from "@/components/Sidebar/app-sidebar";
 import { ThemeProvider } from "next-themes";
 import { ModeToggle } from "@/components/Sidebar/mode-toogle";
+import Navbar from "@/components/Sidebar/Navbar";
 
 
 const geistSans = Geist({
@@ -33,14 +34,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <SidebarProvider>
+          <SidebarProvider>
             <AppSidebar />
-            <main className="flex flex-1 flex-col gap-4 p-4 pt-0 w-full h-screen">
-              <div className="flex gap-3 items-center">
-                <SidebarTrigger />
-              <ModeToggle />
-              </div>
-              {children}
+            <main className="w-full">
+              <Navbar />
+              <div className="px-4">{children}</div>
             </main>
           </SidebarProvider>
         </ThemeProvider>
