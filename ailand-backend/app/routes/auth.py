@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
 
-from app.schemas.user import UserCreate, UserResponse, Token
+from app.schemas.user import UserCreate, UserResponse, TokenResponse, UserInToken
 from app.models.user import User
 from app.utils.security import verify_password, get_password_hash, create_access_token
 from app.utils.dependencies import get_user_by_username, get_user_by_email
@@ -44,12 +44,11 @@ async def signup(user: UserCreate, db: Session = Depends(get_db)):
     
     return db_user
 
-@router.post("/login", response_model=Token)
+@router.post("/login", response_model=TokenResponse)
 async def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db)
 ):
-    """Login and get access token"""
     # Get user from database
     user = get_user_by_username(db, username=form_data.username)
     if not user:
@@ -74,4 +73,24 @@ async def login(
         expires_delta=access_token_expires
     )
     
-    return {"access_token": access_token, "token_type": "bearer"}
+    # Create refresh token
+    refresh_token_expires = timedelta(days=1)
+    refresh_token = create_access_token(
+        data={"sub": user.username, "type": "refresh"},
+        expires_delta=refresh_token_expires
+    )
+    
+    # Build user response
+    user_data = UserInToken(
+        id=user.id,
+        name=user.username, 
+        email=user.email,
+        role="free",  
+        plan_id=1   
+    )
+    
+    return TokenResponse(
+        access_token=access_token,
+        refresh_token=refresh_token,
+        user=user_data
+    )

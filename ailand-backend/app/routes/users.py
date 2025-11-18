@@ -19,7 +19,7 @@ async def read_user(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """Get user by username (protected route)"""
+    """Get user by username """
     user = get_user_by_username(db, username=username)
     if not user:
         raise HTTPException(

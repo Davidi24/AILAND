@@ -6,7 +6,6 @@ from typing import Optional
 from app.config import settings
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    """Verify a plain password against a hashed password"""
     try:
         salt, stored_hash = hashed_password.split(':')
         salt_bytes = bytes.fromhex(salt)
@@ -26,7 +25,6 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         return False
 
 def get_password_hash(password: str) -> str:
-    """Hash a password using scrypt"""
     salt = os.urandom(32)
     pwd_hash = hashlib.scrypt(
         password.encode('utf-8'),
@@ -39,7 +37,6 @@ def get_password_hash(password: str) -> str:
     return f"{salt.hex()}:{pwd_hash.hex()}"
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
-    """Create a JWT access token"""
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
@@ -50,7 +47,6 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     return encoded_jwt
 
 def decode_access_token(token: str):
-    """Decode a JWT access token"""
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         return payload

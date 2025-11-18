@@ -114,3 +114,4 @@ celerybeat.pid
 # Docker volumes 
 postgres-data/
 pgdata/
+
