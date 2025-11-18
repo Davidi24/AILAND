@@ -14,22 +14,19 @@ app = FastAPI(
 
 # CORS Configuration for Next.js
 origins = [
-    "http://localhost:3000",           # Next.js default dev server
-    "http://localhost:3001",           # Alternative Next.js port
+    "http://localhost:3000",           
+    "http://localhost:3001",           
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
-    # Add your production domains here
-    # "https://yourdomain.com",
-    # "https://www.yourdomain.com",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,              # List of allowed origins
-    allow_credentials=True,             # Allow cookies/auth headers
-    allow_methods=["*"],                # Allow all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],                # Allow all headers
-    expose_headers=["*"],               # Expose all headers to the client
+    allow_origins=origins,              
+    allow_credentials=True,             
+    allow_methods=["*"],               
+    allow_headers=["*"],                
+    expose_headers=["*"],              
 )
 
 # Include routers
@@ -39,12 +36,6 @@ app.include_router(users.router, prefix="/users", tags=["Users"])
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome to FastAPI Authentication System",
-        "version": "1.0.0",
-        "status": "running"
+        "message": "FastAPI Authentication System"
     }
 
-@app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    return {"status": "healthy"}

@@ -34,9 +34,19 @@ class UserResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class Token(BaseModel):
+# User data in token response (matches your desired format)
+class UserInToken(BaseModel):
+    id: int
+    name: str
+    email: str
+    role: str = "free"
+    plan_id: int = 1
+
+# Token response with user data
+class TokenResponse(BaseModel):
     access_token: str
-    token_type: str
+    refresh_token: str
+    user: UserInToken
 
 class TokenData(BaseModel):
     username: Optional[str] = None

@@ -9,18 +9,15 @@ from app.utils.security import decode_access_token
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 def get_user_by_username(db: Session, username: str):
-    """Get user from database by username"""
     return db.query(User).filter(User.username == username).first()
 
 def get_user_by_email(db: Session, email: str):
-    """Get user from database by email"""
     return db.query(User).filter(User.email == email).first()
 
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
     db: Session = Depends(get_db)
 ) -> User:
-    """Get current authenticated user"""
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
