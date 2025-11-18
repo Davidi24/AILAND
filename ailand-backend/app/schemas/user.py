@@ -34,7 +34,6 @@ class UserResponse(BaseModel):
     class Config:
         from_attributes = True
 
-# User data in token response (matches your desired format)
 class UserInToken(BaseModel):
     id: int
     name: str
@@ -42,7 +41,6 @@ class UserInToken(BaseModel):
     role: str = "free"
     plan_id: int = 1
 
-# Token response with user data
 class TokenResponse(BaseModel):
     access_token: str
     refresh_token: str
