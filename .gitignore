@@ -115,3 +115,22 @@ celerybeat.pid
 postgres-data/
 pgdata/
 
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+
+# Database
+*.db
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
