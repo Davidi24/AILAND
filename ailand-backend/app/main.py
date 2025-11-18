@@ -6,11 +6,7 @@ from app.database import engine, Base
 # Create database tables
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(
-    title="FastAPI Authentication System",
-    description="Authentication API with JWT tokens",
-    version="1.0.0"
-)
+app = FastAPI()
 
 # CORS Configuration for Next.js
 origins = [
@@ -36,6 +32,6 @@ app.include_router(users.router, prefix="/users", tags=["Users"])
 @app.get("/")
 async def root():
     return {
-        "message": "FastAPI Authentication System"
+        "message": "Checking if all working"
     }
 
