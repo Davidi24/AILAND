@@ -3,7 +3,7 @@ import os
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
-from app.config import settings
+from app.core.config import settings
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     try:
