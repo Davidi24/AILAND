@@ -3,11 +3,19 @@
 import { cookies } from "next/headers";
 import { loginUser } from "@/lib/api/auth"; 
 
-export async function loginAction(email: string, password: string) {
-  const data = await loginUser({ email, password }); 
+export async function loginAction(username: string, password: string) {
+  console.log("username: ",username)
+  const data = await loginUser({ username, password }); 
 
   (await
-    cookies()).set("auth_token", data.token, {
+    cookies()).set("auth_token", data.access_token,{
+    httpOnly: true,
+    secure: false,
+    path: "/",
+  });
+
+  (await
+    cookies()).set("auth_token", data.refresh_token,{
     httpOnly: true,
     secure: false,
     path: "/",

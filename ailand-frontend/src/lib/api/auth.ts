@@ -1,64 +1,62 @@
-export interface LoginPayload {
-  email: string;
-  password: string;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-}
-
-export interface LoginResponse {
-  token: string;
-  user: User;
-}
-
+"use server"
+import { LoginPayload } from "@/types/authTypes";
+import { LoginResponse } from "@/types/authTypes";
+import { RegisterPayload } from "@/types/authTypes";
+import { apiRequest } from "./request";
 
 export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
+  const form = new URLSearchParams();
+  form.append("username", payload.username);
+  form.append("password", payload.password);
+
+  const res = await apiRequest(
+    "/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: form.toString(),
+    },
+    false
+  );
+
+  const body = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+     throw new Error(
+      body?.detail?.[0]?.msg ||
+      "Login failed"
+    );
+  }
+
+  return body as LoginResponse;
+}
+
+
+
+
+
+export async function registerUser(payload: RegisterPayload): Promise<LoginResponse> {
+  const res = await apiRequest(
+    "/signup",
+    {
+      method: "POST",
+      body: JSON.stringify(payload),
+    },
+    false
+  );
+  
+  const body = await res.json().catch(() => ({}));
  
+  if (!res.ok) {
+    throw new Error(
+      body?.detail?.[0]?.msg ||
+      "Registration failed"
+    );
 
-  if (payload.email !== "test@test.com" || payload.password !== "123456") {
-    const err: any = new Error("Invalid credentials");
-    err.status = 401;
-    throw err;
   }
 
-  return {
-    token: "mock_jwt_token_123456",
-    user: {
-      id: "1",
-      name: "Mock User",
-      email: "test@test.com",
-    },
-  };
-}
 
-
-
-export interface RegisterPayload {
-  name: string;
-  email: string;
-  password: string;
-}
-
-export async function registerUser(
-  payload: RegisterPayload
-): Promise<LoginResponse> {
-  await new Promise((r) => setTimeout(r, 400));
-
-  if (!payload.email.includes("@")) {
-    const err: any = new Error("Invalid email");
-    err.status = 400;
-    throw err;
-  }
-
-  return {
-    token: "mock_register_token_123456",
-    user: {
-      id: "2",
-      name: payload.name,
-      email: payload.email,
-    },
-  };
+  return body as LoginResponse;
 }

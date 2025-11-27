@@ -27,6 +27,7 @@ export function RegisterForm({
     clearError,
 }: RegisterFormProps) {
     const [show, setShow] = useState(false);
+    console.log("err", error)
     return (
         <div className={cn("flex flex-col gap-6", className)}>
             <Card className="overflow-hidden p-0">
@@ -89,6 +90,9 @@ export function RegisterForm({
                                     </button>
                                 </div>
                             </Field>
+                            <Field> {error && (
+                                <p className="text-red-400 text-xs -my-2 text-left">{error}</p>
+                            )}</Field>
 
                             <Field>
                                 <Button type="submit" className="cursor-pointer">Create account</Button>
@@ -133,7 +137,7 @@ export function RegisterForm({
                         <img
                             src="/assets/icons/login.png"
                             alt="Image"
-                            className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                            className="absolute inset-0 h-full w-full object-cover dark:brightness-[1] "
                         />
                     </div>
                 </CardContent>
