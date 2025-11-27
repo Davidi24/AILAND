@@ -38,12 +38,12 @@ export function LoginForm({ className, onSubmit, error, clearError }: LoginFormP
                                 </p>
                             </div>
                             <Field>
-                                <FieldLabel htmlFor="email">Email</FieldLabel>
+                                <FieldLabel htmlFor="email">Username</FieldLabel>
                                 <Input
                                     name="email"
                                     id="email"
-                                    type="email"
-                                    placeholder="m@example.com"
+                                    type="text"
+                                    placeholder="username"
                                     required
                                     onChange={clearError}
                                     autoComplete="off"
@@ -80,9 +80,9 @@ export function LoginForm({ className, onSubmit, error, clearError }: LoginFormP
                                     </button>
                                 </div>
 
-                                {error && (
-                                    <p className="text-red-400 text-xs mt-0 text-left">{error}</p>
-                                )}
+                                <Field> {error && (
+                                <p className="text-red-400 text-xs -my-2 text-left">{error}</p>
+                            )}</Field>
                             </Field>
 
 
