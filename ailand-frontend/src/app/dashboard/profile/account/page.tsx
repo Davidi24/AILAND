@@ -1,5 +1,5 @@
-import { ContentSection } from '../components/content-section'
-import { AccountForm } from './account-form'
+import { ContentSection } from '../../../../components/content-section'
+import { AccountForm } from '../../../../components/ui/forms/account-form'
 
 
 function page() {

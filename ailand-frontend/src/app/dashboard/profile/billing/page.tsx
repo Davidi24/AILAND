@@ -1,5 +1,5 @@
-import { ContentSection } from '../components/content-section'
-import BillingForm from './billing-form'  // or correct path
+import { ContentSection } from '../../../../components/content-section'
+import BillingForm from '../../../../components/ui/forms/billing-form'  // or correct path
 
 function page() {
   return (

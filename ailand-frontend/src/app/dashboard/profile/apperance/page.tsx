@@ -16,8 +16,8 @@
 // }
 
 // export default page
-import { ContentSection } from '../components/content-section'
-import { AppearanceForm } from './appearance-form'
+import { ContentSection } from '../../../../components/content-section'
+import { AppearanceForm } from '../../../../components/ui/forms/appearance-form'
 import { FontProvider } from '@/context/font-provider'
 import { ThemeProvider } from '@/context/theme-provider'
 

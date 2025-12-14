@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/Sidebar/sidebar";
-import { AppSidebar } from "@/components/Sidebar/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "next-themes";
-import { ModeToggle } from "@/components/Sidebar/mode-toogle";
-import Navbar from "@/components/Sidebar/Navbar";
+import { ModeToggle } from "@/components/mode-toogle";
+import Navbar from "@/components/Navbar";
 
 
 const geistSans = Geist({

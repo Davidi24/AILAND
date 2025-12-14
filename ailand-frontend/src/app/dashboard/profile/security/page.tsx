@@ -1,5 +1,5 @@
-import { ContentSection } from '../components/content-section'
-import SecurityForm from './security-form'  // adjust path if needed
+import { ContentSection } from '../../../../components/content-section'
+import SecurityForm from '../../../../components/ui/forms/security-form'  // adjust path if needed
 
 function page() {
   return (
