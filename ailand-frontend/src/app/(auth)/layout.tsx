@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
-import { ModeToggle } from "@/components/Sidebar/mode-toogle";
+import { ModeToggle } from "@/components/mode-toogle";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
     return (

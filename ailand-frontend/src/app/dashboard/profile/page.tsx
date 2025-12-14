@@ -1,4 +1,4 @@
-import { ContentSection } from '../profile/components/content-section'
+import { ContentSection } from '../../../components/content-section'
 import { ProfileForm } from './user_profile/profile-form'
 
 export default function SettingsProfile() {
