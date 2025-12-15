@@ -1,6 +1,6 @@
 "use client";
 
-import { logoutAction } from "@/app/api/auth/login/route";
+import { logoutAction } from "@/app/actions/auth";
 import { useAuth } from "@/context/useAuth";
 import { useRouter } from "next/navigation";
 
