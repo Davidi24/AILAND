@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { useAuth } from "@/context/useAuth";
-import { loginAction } from "../../api/auth/login/route";
+import { loginAction } from "../../actions/auth";
 import { LoginForm } from "@/components/ui/forms/loginForm";
 
 
