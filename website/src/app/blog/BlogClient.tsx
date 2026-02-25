@@ -21,10 +21,8 @@ export default function BlogClient({ posts }: { posts: any[] }) {
     <div className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pb-32 px-4">
       <SectionTitle
         title="AILand Blog"
-        subtitle="Stories, reports, and insights from our journey in AI-powered immersive knowledge visualization."
+        subtitle="Updates, ideas, and progress from our journey building immersive digital learning experiences."
       />
-      <div className='text-red-600 mt-2 -mb-4'>These blogs are AI-generated and only for visual demonstration, not our real blogs!!!</div>
-
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
