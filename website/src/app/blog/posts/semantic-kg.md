@@ -1,15 +1,26 @@
 ---
-title: "Semantic Knowledge Graphs: The Next Data Revolution"
-date: "2025-08-22"
-tag: "Knowledge Graphs"
-excerpt: "Why linking data semantically matters for AI reasoning, research discovery, and immersive visualization."
-image: "/images/blog/semantic-kg.jpg"
+title: "360°Deutsch Today – And What Comes Next"
+date: "2025-10-20"
+tag: "Product"
+tags: ["360°Deutsch", "Roadmap", "Future Development", "EdTech"]
+excerpt: "An overview of 360°Deutsch as it stands today and the next steps in its development."
+image: "/images/blog/360.png"
 ---
 
-Traditional databases store facts.  
-Semantic graphs store **meaning**—the relationships between entities.
+360°Deutsch is designed as an immersive, browser-based platform for learning German in context.
 
-From biomedical research to enterprise analytics, semantic graphs enable systems to reason contextually instead of just matching keywords.  
-With visualization tools like AILand’s WebXR explorer, these graphs become not just understandable—but explorable.
+Today, the system includes interactive 3D environments that allow learners to explore a structured room. Objects are directly connected to vocabulary, grammatical information, and pronunciation support. Learning becomes interactive and spatial rather than passive.
 
-The result: data that talks back.
+On mobile devices, augmented reality enhances this experience. Learners can connect German vocabulary to real-world objects, strengthening retention through direct contextual exposure.
+
+The platform includes structured user progression, task-based learning activities, and AI-assisted guidance. All components operate within a unified knowledge system that ensures consistency across environments and learning modes.
+
+While the core architecture is established, development continues with a clear roadmap.
+
+Upcoming improvements include expanded vocabulary within existing room, more advanced pronunciation and voice interaction support, enhanced learning analytics for better progress tracking, and refinement of adaptive learning mechanisms.
+
+We are also planning to extend beyond A1 level, introducing more complex grammatical structures and additional interactive scenarios for A2 and B1 learners. The system architecture is intentionally modular, allowing expansion to further languages in the long term.
+
+Our focus remains constant: improving learning effectiveness while maintaining clarity and accessibility.
+
+360°Deutsch is evolving — not through rapid scaling, but through structured and intentional growth.
