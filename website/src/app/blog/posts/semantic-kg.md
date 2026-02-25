@@ -1,6 +1,6 @@
 ---
 title: "360°Deutsch Today – And What Comes Next"
-date: "2025-10-20"
+date: "2026-02-25"
 tag: "Product"
 tags: ["360°Deutsch", "Roadmap", "Future Development", "EdTech"]
 excerpt: "An overview of 360°Deutsch as it stands today and the next steps in its development."
